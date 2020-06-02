@@ -1,8 +1,8 @@
 import {Entity, Column} from "typeorm";
 import { BaseEntity } from "./BaseEntity";
 
-@Entity({name: 'User'})
-export class User extends BaseEntity {
+@Entity({name: 'Costumer'})
+export class Costumer extends BaseEntity {
 
   
     @Column({type: 'varchar', length: 100})
@@ -16,12 +16,14 @@ export class User extends BaseEntity {
     email: string;
 
 
-    @Column({default: false})
-    isRoot: boolean;
+    @Column({type: 'varchar', length: 50})
+    phone: string;
 
 
     @Column({type: 'varchar', length: 100})
     password: string;
+
+    
 
 
 
