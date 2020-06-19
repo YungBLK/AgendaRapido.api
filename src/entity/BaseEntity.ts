@@ -8,10 +8,8 @@ export abstract class BaseEntity {
     @Column({default: true})
     active: boolean;
 
-
     @Column({default: false})
     deleted: boolean;
-
 
     @CreateDateColumn({type:"timestamp"})
     createdAt: Date;

@@ -15,7 +15,6 @@ export class User extends BaseEntity {
     @Column({type: 'varchar', length: 200})
     email: string;
 
-
     @Column({default: false})
     isRoot: boolean;
 

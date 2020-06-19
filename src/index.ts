@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import * as express from "express";
+import * as cors from "cors";
 import * as bodyParser from "body-parser";
 import { Request, Response } from "express";
 import { Routes } from "./routes";
@@ -8,11 +9,14 @@ import config from "./configuration/config";
 import auth from "./middlaware/auth";
 import { User } from "./entity/User";
 
+
 // create express app
 const app = express();
 
 app.use(bodyParser.json());
- app.use(auth);
+app.use(cors());
+// app.use(auth);
+
 
 // register express routes from defined application routes
 Routes.forEach(route => {

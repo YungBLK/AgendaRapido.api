@@ -8,10 +8,11 @@ import config from '../configuration/config';
 export class UserController extends BaseController<User> {
 
     constructor(){
-        super(User);
+        super(User, true);
     }
     async auth(request: Request){
         let {email, password} = request.body;
+        
         if(!email || !password ){
             return { status: 400, message: 'informe o email e a senha para efetuar o login'}
         }
